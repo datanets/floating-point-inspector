@@ -1,3 +1,4 @@
+// original code template provided by mtrigobo
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -105,11 +106,10 @@ int main(int argc, char **argv)
     printf("Floating Point Inspector\n\n");
     bigOrSmallEndian();
     for (;;) {
-        if (argc == 1)                      // allow grading script to control ...
-            printf("> ");                   // ... whether prompt character is printed
+        printf("> ");
         nValues = getNextHexInt(&i);
         printf("0x%08X\n", i);
-        if (! nValues) {                    // encountered bad input
+        if (!nValues) {                     // encountered bad input
             printf("bad input\n");
             while (getchar() != '\n') ;     // flush bad line from input buffer
             continue;
